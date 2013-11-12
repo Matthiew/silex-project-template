@@ -1,0 +1,15 @@
+# General garbage
+.DS_Store
+Thumbs.db
+/compass_app_log.txt
+
+# Project stuff
+dump.rdb
+*.sass-cache
+
+# User stuff
+*.sublime-project
+*.sublime-workspace
+.vagrant*
+Vagrantfile.local
+composer.phar

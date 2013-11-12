@@ -1,0 +1,9 @@
+{
+    "require": {
+        "silex/silex": "~1.1",
+        "mustache/silex-provider": "~1.0"
+    },
+    "require-dev": {
+        "silex/web-profiler": "~1.0"
+    }
+}
