@@ -19,3 +19,4 @@ be updated for each project.
 2. Get Composer (if you don't already have it)
 3. Run `composer.phar install`
 4. To update dependencies to their latest version, run `composer.phar update`
+5. `cd puppet && librarian-puppet install`
