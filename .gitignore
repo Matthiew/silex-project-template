@@ -13,3 +13,5 @@ dump.rdb
 .vagrant*
 Vagrantfile.local
 composer.phar
+.tmp/
+modules/

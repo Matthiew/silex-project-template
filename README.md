@@ -8,6 +8,13 @@ be updated for each project.
 
 ## Getting Started
 
+### Dependencies
+
+- Puppet
+- Puppet Librarian (`gem install puppet-librarian`)
+
+### Setup
+
 1. Clone this repository
 2. Get Composer (if you don't already have it)
 3. Run `composer.phar install`
