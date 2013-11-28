@@ -11,8 +11,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "puppet" do |puppet|
-    puppet.manifests_path = "manifests"
-    puppet.manifest_file = "application.pp"
+    puppet.manifests_path = "puppet/manifests"
+    puppet.module_path = "puppet/modules"
   end
 
   if File.exists?("../syn-vagrant.sh")

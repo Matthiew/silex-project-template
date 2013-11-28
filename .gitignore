@@ -13,6 +13,6 @@ dump.rdb
 .vagrant*
 Vagrantfile.local
 composer.phar
-.tmp/
-modules/
+puppet/.tmp/
+puppet/modules/
 .librarian/
