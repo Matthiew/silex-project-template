@@ -16,3 +16,5 @@ composer.phar
 puppet/.tmp/
 puppet/modules/
 .librarian/
+.tmp/
+modules/
