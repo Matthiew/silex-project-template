@@ -1,0 +1,27 @@
+{
+  "name": "project",
+  "version": "0.0.0",
+  "homepage": "https://github.com/synapsestudios/project",
+  "authors": [
+    "Synapse Studios"
+  ],
+  "main": "application.js",
+  "license": "N/A",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs"     : "~2.1.9",
+    "chaplin"       : "~0.11.3",
+    "handlebars"    : "~1.1.2",
+    "requirejs-hbs" : "master",
+    "jquery"        : "~2.0.3",
+    "underscore"    : "~1.5.2",
+    "foundation"    : "zurb/foundation#4.3.2"
+  }
+}

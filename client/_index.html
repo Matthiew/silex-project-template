@@ -1,0 +1,49 @@
+<!doctype html>
+
+<!--[if IEMobile 7]><html class="no-js iem7 oldie"><![endif]-->
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if (IE 9)&!(IEMobile)]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>Project Template</title>
+
+		<!--[if ! lte IE 6]><!-->
+			<link href="/_media/css/app.css" media="all" rel="stylesheet" type="text/css" />
+		<!--<![endif]-->
+		<!--[if lte IE 6]><link rel="stylesheet" href="/_media/css/ie6.css" media="screen, projection"><![endif]-->
+	</head>
+
+	<body>
+
+		<!-- concatenated third-party libraries -->
+		<script type="text/javascript" src="/scripts/vendor.js" charset="utf-8"></script>
+
+		<script type="text/javascript" charset="utf-8">
+			var environment = '<!-- @echo ENVIRONMENT -->';
+		</script>
+
+		<!-- minified application code -->
+		<script type="text/javascript" src="/scripts/app.js" charset="utf-8"></script>
+
+		<!-- @if ENVIRONMENT='development' -->
+		<script src="http://127.0.0.1:35729/livereload.js"></script>
+		<!-- @endif -->
+
+		<!-- @if ENVIRONMENT='production' -->
+		<script type="text/javascript">
+			// Google Analytics Code
+			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		<!-- @endif -->
+
+	</body>
+</html>
