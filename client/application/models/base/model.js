@@ -3,7 +3,7 @@ define([
 ], function(Chaplin) {
   'use strict';
 
-  var Model = Chaplin.Model.extend({
+  return Chaplin.Model.extend({
     // Mixin a synchronization state machine.
     // initialize: function() {
     //   _.extend(this, Chaplin.SyncMachine);
@@ -16,5 +16,4 @@ define([
     // Place your application-specific model features here
   });
 
-  return Model;
 });
