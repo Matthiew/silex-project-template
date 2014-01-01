@@ -3,9 +3,10 @@
 namespace Application\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Synapse\Controller\AbstractRestController;
 use Synapse\View\AbstractView;
 
-class RestController
+class RestController extends AbstractRestController
 {
     public function get()
     {

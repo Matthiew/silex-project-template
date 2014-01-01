@@ -48,13 +48,7 @@ class ServiceRestControllerResolver implements ControllerResolverInterface
             throw new \InvalidArgumentException(sprintf('Service "%s" does not exist.', $service));
         }
 
-        $method = $request->getMethod();
-
-        if (!method_exists($this->app[$service], $method)) {
-            throw new MethodNotImplementedException(sprintf('HTTP method "%s" has not been implemented in service "%s"', $method, $service));
-        }
-
-        return array($this->app[$service], $method);
+        return array($this->app[$service], 'execute');
     }
 
     /**
