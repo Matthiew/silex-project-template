@@ -5,9 +5,10 @@ namespace Synapse\Provider;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
+use Synapse\Rest\Exception\MethodNotImplementedException;
 
 /**
- * Enables name_of_service:http_method_name syntax for declaring controllers.
+ * Enables name_of_service:rest syntax for declaring controllers.
  *
  * @link http://silex.sensiolabs.org/doc/providers/service_controller.html
  */
@@ -41,13 +42,17 @@ class ServiceRestControllerResolver implements ControllerResolverInterface
             return $this->resolver->getController($request);
         }
 
-        $service = $controller;
+        $service = str_replace(':rest', '', $controller);
 
         if (!isset($this->app[$service])) {
             throw new \InvalidArgumentException(sprintf('Service "%s" does not exist.', $service));
         }
 
         $method = $request->getMethod();
+
+        if (!method_exists($this->app[$service], $method)) {
+            throw new MethodNotImplementedException(sprintf('HTTP method "%s" has not been implemented in service "%s"', $method, $service));
+        }
 
         return array($this->app[$service], $method);
     }
