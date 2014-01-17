@@ -59,8 +59,6 @@ nginx:
             listen_port: '80'
             index_files:
                 - index.html
-                - index.htm
-                - index.php
             envvars:
                 - 'APP_ENV dev'
         GRDFSOVWMTSn:
