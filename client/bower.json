@@ -16,12 +16,13 @@
     "tests"
   ],
   "dependencies": {
-    "requirejs"     : "~2.1.9",
-    "chaplin"       : "~0.11.3",
-    "handlebars"    : "~1.1.2",
-    "requirejs-hbs" : "master",
-    "jquery"        : "~2.0.3",
-    "underscore"    : "~1.5.2",
-    "foundation"    : "zurb/foundation#4.3.2"
+    "requirejs": "~2.1.9",
+    "chaplin": "~0.11.3",
+    "handlebars": "~1.1.2",
+    "requirejs-hbs": "master",
+    "jquery": "~2.0.3",
+    "underscore": "~1.5.2",
+    "foundation": "zurb/foundation#4.3.2",
+    "backbone.validation": "~0.7.1"
   }
 }
