@@ -1,12 +1,14 @@
-/* global Backbone:false */
 define([
 	'underscore',
 	'jquery',
-	'chaplin'
+	'chaplin',
+	'backbone',
+	'backbone-validation'
 ], function(
 	_,
 	$,
-	Chaplin
+	Chaplin,
+	Backbone
 ) {
 	'use strict';
 

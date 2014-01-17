@@ -1,7 +1,9 @@
 define([
-	'chaplin'
+	'chaplin',
+	'views/layout/site'
 ], function(
-	Chaplin
+	Chaplin,
+	SiteView
 ) {
 	'use strict';
 
@@ -10,6 +12,8 @@ define([
 		beforeAction: function()
 		{
 			Chaplin.Controller.prototype.beforeAction.call(this);
+
+			this.compose('site', SiteView, {});
 		}
 
 	});

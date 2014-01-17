@@ -1,6 +1,6 @@
 define([
 	'base/view',
-	'hbs!templates/hello-world'
+	'hbs!templates/hello/world'
 ], function(
 	View,
 	template

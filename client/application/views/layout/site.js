@@ -1,6 +1,6 @@
 define([
 	'base/view',
-	'hbs!templates/site'
+	'hbs!templates/layout/site'
 ], function(
 	View,
 	template
@@ -13,7 +13,7 @@ define([
 		template  : template,
 
 		regions : {
-			main: '#main-container'
+			mainRegion: '#mainRegion'
 		}
 	});
 

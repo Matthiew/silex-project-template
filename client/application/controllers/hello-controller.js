@@ -1,11 +1,13 @@
 define([
 	'base/controller',
 	'models/hello-world',
-	'views/hello-world-view'
+	'views/hello/world',
+	'views/hello/index'
 ], function(
 	Controller,
 	HelloWorld,
-	HelloWorldView
+	HelloWorldView,
+	HelloIndexView
 ) {
 	'use strict';
 
@@ -13,9 +15,13 @@ define([
 		show: function(params) {
 			this.model = new HelloWorld();
 			this.view = new HelloWorldView({
-				model: this.model,
-				region: 'main'
+				model  : this.model,
+				region : 'mainRegion'
 			});
+		},
+
+		index : function() {
+			this.view = new HelloIndexView({});
 		}
 	});
 
