@@ -1,12 +1,12 @@
 define([
-    'models/base/model'
+	'base/model'
 ], function(
-    Model
+	Model
 ) {
-    'use strict';
+	'use strict';
 
-    return Model.extend({
-        // This model is intentionally left blank
-    });
+	return Model.extend({
+		// This model is intentionally left blank
+	});
 
 });

@@ -1,22 +1,22 @@
 define([
-    'controllers/base/controller',
-    'models/hello-world',
-    'views/hello-world-view'
+	'base/controller',
+	'models/hello-world',
+	'views/hello-world-view'
 ], function(
-    Controller,
-    HelloWorld,
-    HelloWorldView
+	Controller,
+	HelloWorld,
+	HelloWorldView
 ) {
-    'use strict';
+	'use strict';
 
-    return Controller.extend({
-        show: function(params) {
-            this.model = new HelloWorld();
-            this.view = new HelloWorldView({
-                model: this.model,
-                region: 'main'
-            });
-        }
-    });
+	return Controller.extend({
+		show: function(params) {
+			this.model = new HelloWorld();
+			this.view = new HelloWorldView({
+				model: this.model,
+				region: 'main'
+			});
+		}
+	});
 
 });

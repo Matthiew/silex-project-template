@@ -1,20 +1,20 @@
 define([
-    'views/base/view',
-    'hbs!templates/site'
+	'base/view',
+	'hbs!templates/site'
 ], function(
-    View,
-    template
+	View,
+	template
 ) {
-    'use strict';
+	'use strict';
 
-    return View.extend({
-        container : 'body',
-        id        : 'site-container',
-        template  : template,
+	return View.extend({
+		container : 'body',
+		id        : 'site-container',
+		template  : template,
 
-        regions : {
-            main: '#main-container'
-        }
-    });
+		regions : {
+			main: '#main-container'
+		}
+	});
 
 });

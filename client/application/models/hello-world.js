@@ -1,18 +1,18 @@
 define([
-    'chaplin',
-    'models/base/model'
+	'chaplin',
+	'base/model'
 ], function(
-    Chaplin,
-    Model
+	Chaplin,
+	Model
 ) {
-    'use strict';
+	'use strict';
 
-    return Model.extend({
+	return Model.extend({
 
-        defaults: {
-            message: 'Hello World!'
-        }
+		defaults: {
+			message: 'Hello World!'
+		}
 
-    });
+	});
 
 });

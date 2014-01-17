@@ -1,22 +1,22 @@
 define([
-    'underscore',
-    'chaplin'
+	'underscore',
+	'chaplin'
 ], function(
-    _,
-    Chaplin
+	_,
+	Chaplin
 ) {
-    'use strict';
+	'use strict';
 
-    // Delegate to Chaplin’s utils module
-    var utils = Chaplin.utils.beget(Chaplin.utils);
+	// Delegate to Chaplin’s utils module
+	var utils = Chaplin.utils.beget(Chaplin.utils);
 
-    // Add additional application-specific properties and methods
+	// Add additional application-specific properties and methods
 
-    // _(utils).extend({
-    //   someProperty: 'foo',
-    //   someMethod: function() {}
-    // });
+	// _(utils).extend({
+	//   someProperty: 'foo',
+	//   someMethod: function() {}
+	// });
 
-  return utils;
+	return utils;
 
 });

@@ -1,23 +1,23 @@
 /* global window:false, require:false, document:false */
 require([
-    'jquery',
-    'application',
-    'routes'
+	'jquery',
+	'application',
+	'routes'
 ], function (
-    $,
-    Application,
-    routes
+	$,
+	Application,
+	routes
 ) {
-    'use strict';
+	'use strict';
 
-    $(document).ready(
-        function()
-        {
-            window.app = new Application({
-                controllerSuffix : '-controller',
-                routes           : routes
-            });
-        }
-    );
+	$(document).ready(
+		function()
+		{
+			window.app = new Application({
+				controllerSuffix : '-controller',
+				routes           : routes
+			});
+		}
+	);
 
 });
