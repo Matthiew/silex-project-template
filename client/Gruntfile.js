@@ -1,4 +1,4 @@
-/* global module:false */
+/* global require, module */
 module.exports = function ( grunt ) {
     'use strict';
 
@@ -8,15 +8,11 @@ module.exports = function ( grunt ) {
      * Load required Grunt tasks. These are installed based on the versions listed
      * in `package.json` when you do `npm install` in this directory.
      */
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-requirejs');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-preprocess');
+    // Load grunt tasks automatically
+    require('load-grunt-tasks')(grunt);
+
+    // Time how long tasks take. Can help when optimizing build times
+    require('time-grunt')(grunt);
 
     /**
      * This is the configuration object Grunt uses to give each plugin its
@@ -96,12 +92,15 @@ module.exports = function ( grunt ) {
          */
         src: {
             js: [ 'src/**/*.js', '!src/**/*.spec.js' ],
-            atpl: [ 'src/app/**/*.tpl.html' ],
-            ctpl: [ 'src/components/**/*.tpl.html' ],
-            tpljs: [ '<%= distdir %>/tmp/**/*.js' ],
-            html: [ 'src/index.html' ],
-            sass: 'src/sass/main.scss',
-            unit: [ 'src/**/*.spec.js' ]
+            sass: 'src/sass/main.scss'
+        },
+
+        sass: {
+            dist: {
+                files: {
+                    '<%= distdir %>/css/app.css': 'application/scss/app.scss'
+                }
+            }
         },
 
         /**
@@ -170,17 +169,6 @@ module.exports = function ( grunt ) {
             }
         },
 
-        compass: {
-            compile: {
-                options : {
-                    sassDir        : 'scss',
-                    cssDir         : '<%= distdir %>/_media/css',
-                    httpImagesPath : '/_media/img/css-images',
-                    imagesDir      : 'img/css-images'
-                }
-            }
-        },
-
         /**
          * And for rapid development, we have a watch set up that checks to see if
          * any of the files listed below change, and then to execute the listed
@@ -212,19 +200,17 @@ module.exports = function ( grunt ) {
                     'application.js',
                     '_index.html'
                 ],
-                tasks: ['requirejs'],
+                tasks: ['requirejs', 'preprocess:development'],
                 options: {
                     interrupt: true
                 }
             },
 
-            styles: {
+            sass: {
                 files: [
-                    'scss/**',
-                    'fonts/**',
-                    'img/**'
+                    'application/scss/**'
                 ],
-                tasks: ['compass'],
+                tasks: ['sass:dist'],
                 options: {
                     interrupt: true
                 }
@@ -267,7 +253,7 @@ module.exports = function ( grunt ) {
     grunt.registerTask( 'development', [ 'build', 'preprocess:development' ] );
     grunt.registerTask( 'qa', [ 'build', 'preprocess:qa' ] );
     grunt.registerTask( 'production', [ 'build', 'preprocess:production' ] );
-    grunt.registerTask( 'build', ['clean', 'concat', 'requirejs', 'copy', 'compass'] );
+    grunt.registerTask( 'build', ['clean', 'concat', 'requirejs', 'sass', 'copy'] );
 
     /**
      * A task to build the project, without some of the slower processes. This is
