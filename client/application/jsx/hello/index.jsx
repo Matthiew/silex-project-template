@@ -6,7 +6,7 @@ define([
 ) {
 	return React.createClass({
 		render : function() {
-			return <div>Yo, bosses.</div>;
+			return <div>Yo, {this.props.name}.</div>;
 		}
 	});
 });

@@ -19,7 +19,9 @@ define([
 
 		attach : function()
 		{
-			React.renderComponent(reactTemplate(null), this.el);
+			React.renderComponent(reactTemplate({
+				name: 'Ben'
+			}), this.el);
 			View.prototype.attach.apply(this, arguments);
 		}
 	});
