@@ -8,8 +8,6 @@ requirejs.config({
         hbs                   : '../bower_components/requirejs-hbs/hbs',
         underscore            : '../bower_components/underscore/underscore',
         'backbone-validation' : '../bower_components/backbone.validation/dist/backbone-validation-amd',
-        JSXTransformer        : '../bower_components/react/JSXTransformer',
-        jsx                   : '../bower_components/require-jsx/jsx',
         react                 : '../bower_components/react/react-with-addons'
     },
     shim: {

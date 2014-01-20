@@ -157,6 +157,20 @@ module.exports = function ( grunt ) {
             }
         },
 
+        react : {
+            dynamic_mappings: {
+                files: [
+                    {
+                        expand : true,
+                        cwd    : 'application/templates',
+                        src    : ['**/*.jsx'],
+                        dest   : 'application/templates/build',
+                        ext    : '.js'
+                    }
+                ]
+            }
+        },
+
         requirejs: {
             compile: {
                 options: {
@@ -253,7 +267,7 @@ module.exports = function ( grunt ) {
     grunt.registerTask( 'development', [ 'build', 'preprocess:development' ] );
     grunt.registerTask( 'qa', [ 'build', 'preprocess:qa' ] );
     grunt.registerTask( 'production', [ 'build', 'preprocess:production' ] );
-    grunt.registerTask( 'build', ['clean', 'concat', 'requirejs', 'sass', 'copy'] );
+    grunt.registerTask( 'build', ['clean', 'concat', 'react', 'requirejs', 'sass', 'copy'] );
 
     /**
      * A task to build the project, without some of the slower processes. This is
