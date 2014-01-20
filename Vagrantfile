@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
   static_ip = ENV['STATIC_IP'] || "192.168.50.50"
   config.vm.network "private_network", ip: static_ip
 
-  config.vm.synced_folder "./", "/vagrant", id: "vagrant-root", mount_options: ["dmode=777","fmode=777"]
+  config.vm.synced_folder "./", "/vagrant", id: "vagrant-root", type: "nfs"
 
   config.vm.usable_port_range = (2200..2250)
   config.vm.provider :virtualbox do |virtualbox|
