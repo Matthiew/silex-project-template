@@ -1,9 +1,11 @@
 define([
 	'base/view',
+	'models/hello-world',
 	'react',
 	'templates/hello/index'
 ], function(
 	View,
+	HelloWorldModel,
 	React,
 	reactTemplate
 ) {
@@ -14,13 +16,14 @@ define([
 		autoRender: true,
 		autoAttach: true,
 
-		className: 'hello-world',
 		region: 'mainRegion',
 
 		attach : function()
 		{
+			var model = new HelloWorldModel();
+			window.myModel = model;
 			React.renderComponent(reactTemplate({
-				name: 'Ben'
+				model : model
 			}), this.el);
 			View.prototype.attach.apply(this, arguments);
 		}

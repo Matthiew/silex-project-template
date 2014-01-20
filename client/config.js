@@ -8,7 +8,8 @@ requirejs.config({
         hbs                   : '../bower_components/requirejs-hbs/hbs',
         underscore            : '../bower_components/underscore/underscore',
         'backbone-validation' : '../bower_components/backbone.validation/dist/backbone-validation-amd',
-        react                 : '../bower_components/react/react-with-addons'
+        react                 : '../bower_components/react/react-with-addons',
+        'react.backbone'      : '../bower_components/react.backbone/react.backbone'
     },
     shim: {
         jquery : {

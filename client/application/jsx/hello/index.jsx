@@ -1,12 +1,13 @@
 /** @jsx React.DOM */
 define([
-	'react'
+	'react',
+	'react.backbone'
 ], function(
 	React
 ) {
-	return React.createClass({
+	return React.createBackboneClass({
 		render : function() {
-			return <div>Yo, {this.props.name}.</div>;
+			return <div className="hi">{this.getModel().get('message')}</div>;
 		}
 	});
 });
