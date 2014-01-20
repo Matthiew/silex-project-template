@@ -2,7 +2,7 @@ define([
 	'base/controller',
 	'models/hello-world',
 	'views/hello/world',
-	'views/hello/index'
+	'jsx!views/hello/index'
 ], function(
 	Controller,
 	HelloWorld,
