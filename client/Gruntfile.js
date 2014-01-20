@@ -162,9 +162,9 @@ module.exports = function ( grunt ) {
                 files: [
                     {
                         expand : true,
-                        cwd    : 'application/templates',
+                        cwd    : 'application/jsx',
                         src    : ['**/*.jsx'],
-                        dest   : 'application/templates/build',
+                        dest   : 'application/templates',
                         ext    : '.js'
                     }
                 ]
@@ -208,13 +208,14 @@ module.exports = function ( grunt ) {
              */
             scripts: {
                 files: [
-                    'application/**/*.js',
+                    'application/**/*.{js,jsx}',
                     'application/**/*.hbs',
+                    '!application/templates/**/*.js',
                     'config.js',
                     'application.js',
                     '_index.html'
                 ],
-                tasks: ['requirejs', 'preprocess:development'],
+                tasks: ['react', 'requirejs', 'preprocess:development'],
                 options: {
                     interrupt: true
                 }
