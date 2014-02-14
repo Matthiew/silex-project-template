@@ -5,6 +5,7 @@ namespace Synapse\Provider;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
+use Synapse\Controller\AbstractRestController;
 use Synapse\Rest\Exception\MethodNotImplementedException;
 
 /**
@@ -46,6 +47,11 @@ class ServiceRestControllerResolver implements ControllerResolverInterface
 
         if (!isset($this->app[$service])) {
             throw new \InvalidArgumentException(sprintf('Service "%s" does not exist.', $service));
+        }
+
+        // Bubble to the next resolver maybe?
+        if (!($this->app[$service] instanceof AbstractRestController)) {
+            return null;
         }
 
         return array($this->app[$service], 'execute');
